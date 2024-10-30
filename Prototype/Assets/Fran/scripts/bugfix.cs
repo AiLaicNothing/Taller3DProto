@@ -4,35 +4,36 @@ using UnityEngine;
 
 public class bugfix : MonoBehaviour
 {
+  
     public Color newColor = Color.yellow; // Color a cambiar
-    public LayerMask bugLayer; // LayerMask para la capa "bug"
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0)) // Verificar si se hizo clic izquierdo
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
 
-            if (Physics.Raycast(ray, out hit))
+            // Realizar el raycast a una distancia de 5 unidades
+            if (Physics.Raycast(ray, out hit, 5f))
             {
-                // Comprobar si el objeto está en la capa "bug"
-                if (hit.collider != null && ((1 << hit.collider.gameObject.layer) & bugLayer) != 0)
-                {
-                    ChangeColor(hit.collider.gameObject);
-                }
+                ChangeColor(hit.collider.gameObject);
             }
         }
     }
-
+    //---------------------------------------------------------------------------------------------------------------------
     private void ChangeColor(GameObject obj)
     {
         Renderer renderer = obj.GetComponent<Renderer>();
         if (renderer != null)
         {
-            // Cambiar el color del material del objeto
+            // Cambiar el color del material del objeto a amarillo
             renderer.material.color = newColor;
             Debug.Log("Cambiado el color de " + obj.name + " a " + newColor);
+        }
+        else
+        {
+            Debug.LogWarning("El objeto " + obj.name + " no tiene un componente Renderer.");
         }
     }
 }
