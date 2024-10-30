@@ -4,5 +4,11 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Fran/Muerte.unity
+    guid: 021cf57ef9b406142aceda168159d463
+  - enabled: 1
+    path: "Assets/Fran/repraci\xF3n de grietas.unity"
+    guid: 49e440c253932064a8de11bb1764637d
   m_configObjects: {}
