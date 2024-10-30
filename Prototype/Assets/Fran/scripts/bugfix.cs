@@ -29,11 +29,11 @@ public class bugfix : MonoBehaviour
         {
             // Cambiar el color del material del objeto a amarillo
             renderer.material.color = newColor;
-            Debug.Log("Cambiado el color de " + obj.name + " a " + newColor);
+            Debug.Log("se ha reparado: " + obj.name);
         }
         else
         {
-            Debug.LogWarning("El objeto " + obj.name + " no tiene un componente Renderer.");
+            Debug.LogWarning("El objeto " + obj.name + " no es reparable.");
         }
     }
 }
