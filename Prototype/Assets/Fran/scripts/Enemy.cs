@@ -12,7 +12,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] private float maxHealthPoint;
 
     private Transform target; // nuestro target es nuestro player
-    //private float raycastDistance = 3f; // Distancia del raycast
+ 
 
     private void Start()
     {
